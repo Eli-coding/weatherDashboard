@@ -5,9 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet&family=Lobster&family=Neonderthaw&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/style.css" />
 </head>
 <body>
-    <script src="assets/script.js"></script>
+    
+
+    <div class="jumbotron jumbotron-fluid" id="jumbotron">
+        <div class="container">
+          <h1 class="display-4">Weather Dashboard</h1>
+      
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="cityName" placeholder="Enter City" aria-label="search" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+      </div>
+
+
+      <div class="container-md">
+          <h2>Current Weather:</h2>
+
+            <p id="cityName">City</p> 
+            <p id="currentDate">date</p>   
+            <p id="temp">temperature</p>
+            <p id="wind">wind</p>
+            <p id="humidity">humidity</p>
+            <p id="uvIndex">uvindex</p>
+            <p id="lat">lat</p>
+            <p id="lon">lon</p>
+
+         
+      </div>
+
+      <div class="container-md">
+
+          
+        <h2 id="5day">5 Day Forcast:</h2>
+
+      </div>
+
+      <script src="assets/script.js"></script>
 </body>
 </html>
