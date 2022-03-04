@@ -13,7 +13,7 @@ function getIvuIndex (latEl,lonEl){
         console.log("this is uviindex data ",datas);
 
         var uvIEl =document.getElementById("uvIndex");
-        uvIEl.textContent = "Uvi Index: " + datas.current.uvi; 
+        uvIEl.textContent = "UV Index: " + datas.current.uvi; 
 
     });
 };
@@ -46,20 +46,20 @@ searchButton.addEventListener("click", function () {
         iconEl.src = "http://openweathermap.org/img/w/" + iconCode + ".png";
 
         var cityEl = document.getElementById("city");
-        cityEl.textContent = "City name: "+ data.name;
+        cityEl.textContent =  data.name;
         
         var dateConvert = moment.unix(data.dt).format("MM/DD/YYYY");
         var dateEl = document.getElementById("currentDate");
-        dateEl.textContent = dateConvert;
+        dateEl.textContent = "Date: "+dateConvert;
 
         var tempEl = document.getElementById("temp");
-        tempEl.textContent = data.main.temp
+        tempEl.textContent = "Temperature: " + data.main.temp + "°F";
 
         var windEl = document.getElementById("wind");
-        windEl.textContent = data.wind.speed
+        windEl.textContent ="Windspeed: " + data.wind.speed + " MPH";
 
         var humidityEl = document.getElementById("humidity");
-        humidityEl.textContent = data.main.humidity
+        humidityEl.textContent = "Humidity: " + data.main.humidity + "%";
 
         
         getIvuIndex(data.coord.lat,data.coord.lon );

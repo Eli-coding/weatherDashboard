@@ -1,3 +1,9 @@
+body{
+    background-color: rgb(96, 210, 255);
+}
+
+
+
 #jumbotron{
     background-color: cornflowerblue;
     text-align: center;
@@ -5,3 +11,9 @@
     color: rgb(255, 255, 255);
     
 }
+
+h2 {
+    color:cornflowerblue;
+}
+
+
