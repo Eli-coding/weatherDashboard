@@ -1,55 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hahmlet&family=Lobster&family=Neonderthaw&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
-</head>
-<body>
-    
 
-    <div class="jumbotron jumbotron-fluid" id="jumbotron">
-        <div class="container">
-          <h1 class="display-4">Weather Dashboard</h1>
-      
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hahmlet&family=Lobster&family=Neonderthaw&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+</head>
+
+<body>
+
+
+  <div class="jumbotron jumbotron-fluid" id="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Weather Dashboard</h1>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+
+        <div class="input-group mb-3" id="searchbar">
+          <input type="text" class="form-control" id="cityName" placeholder="Enter City" aria-label="search"
+            aria-describedby="button-addon2">
+          <button class="btn-outline-secondary" type="button" id="searchButton">Search</button>
         </div>
       </div>
 
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" id="cityName" placeholder="Enter City" aria-label="search" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+        <div class="col-3">
+          <h2>Search History</h2>
+          <p>Past search</p>
+        </div>  
+        
       </div>
+      <div class="col-8">
 
+        <h2 id="city"></h2>  
+        <img id="weatherIcon" src="" alt="">
+        <p id="currentDate"></p>
+        <p id="temp"></p>
+        <p id="wind"></p>
+        <p id="humidity"></p>
+        <p id="uvIndex"></p>
 
-      <div class="container-md">
-          <h2>Current Weather:</h2>
-
-          <img id="weatherIcon" src="" alt="">
-
-            <p id="city"></p> 
-            <p id="currentDate"></p>   
-            <p id="temp"></p>
-            <p id="wind"></p>
-            <p id="humidity"></p>
-            <p id="uvIndex"></p>
-            
-
-         
-      </div>
-
-      <div class="container-md">
-
-          
-        <h2 id="5day">5 Day Forcast:</h2>
 
       </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-      <script src="assets/script.js"></script>
+      <div class="col-8">
+      
+        <h2 id="5day">5-Day Forcast:</h2>
+
+        <div class="row row-cols-1 row-cols-md-5 g-4">
+          <div class="col">
+            <div class="card ">
+              <div class="card-body">
+                <h5 class="date1">date1</h5>
+                <img id="icon1" src="" alt="">
+                <p class="temp1">Temp:</p>
+                <p class="wind1">Wind:</p>
+                <p class="hum1">Humidity:</p>
+             
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="date2">date2</h5>
+                <img id="icon2" src="" alt="">
+                <p class="temp2">Temp:</p>
+                <p class="wind2">Wind:</p>
+                <p class="hum2">Humidity:</p>
+           
+              </div>
+            </div>
+          </div>
+        
+
+        
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="date3">date3</h5>
+                <img id="icon2" src="" alt="">
+                  <p class="temp3">Temp:</p>
+                  <p class="wind3">Wind:</p>
+                  <p class="hum3">Humidity:</p>
+             
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="date4">date4</h5>
+                <img id="icon4" src="" alt="">
+                <p class="temp4">Temp:</p>
+                <p class="wind4">Wind:</p>
+                <p class="hum4">Humidity:</p>
+              </div>
+            </div>
+          </div>
+        
+        
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="date5">date 5</h5>
+                <img id="icon5" src="" alt="">
+                <p class="temp5">Temp:</p>
+                <p class="wind5">Wind:</p>
+                <p class="hum5">Humidity:</p>
+             
+              </div>
+            </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="assets/script.js"></script>
 </body>
+
 </html>
