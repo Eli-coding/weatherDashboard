@@ -1,6 +1,25 @@
-
+//git commit before anything
 
 var apiKey = "fd9d2a26a731af77c92b99159b6ac1e4";
+
+function getIvuIndex (latEl,lonEl){
+   
+
+    var otherQueryUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latEl + "&lon=" + lonEl + "&exclude=minutely,hourly,alerts&units=imperial&appid=" + apiKey;
+
+    fetch(otherQueryUrl).then(function (responses) {
+        return responses.json()
+    }).then(function (datas) {
+        console.log("this is uviindex data ",datas);
+
+        var uvIEl =document.getElementById("uvIndex");
+        uvIEl.textContent = "Uvi Index: " + datas.current.uvi; 
+
+    });
+};
+
+
+
 
 var searchButton = document.getElementById("searchButton");  //don't touch
 searchButton.addEventListener("click", function () {
@@ -22,8 +41,16 @@ searchButton.addEventListener("click", function () {
         console.log("lat: " + data.coord.lat);
         console.log("lon:" + data.coord.lon);
 
-        var latEl=document.getElementById("lat");
-        var latEl.textContent = data.coord.lat
+        var iconCode = data.weather[0].icon;
+        var iconEl = document.getElementById("weatherIcon");
+        iconEl.src = "http://openweathermap.org/img/w/" + iconCode + ".png";
+
+        var cityEl = document.getElementById("city");
+        cityEl.textContent = "City name: "+ data.name;
+        
+        var dateConvert = moment.unix(data.dt).format("MM/DD/YYYY");
+        var dateEl = document.getElementById("currentDate");
+        dateEl.textContent = dateConvert;
 
         var tempEl = document.getElementById("temp");
         tempEl.textContent = data.main.temp
@@ -33,20 +60,15 @@ searchButton.addEventListener("click", function () {
 
         var humidityEl = document.getElementById("humidity");
         humidityEl.textContent = data.main.humidity
-    }) //repeat steps 
+
+        
+        getIvuIndex(data.coord.lat,data.coord.lon );
+       
+    }); //repeat steps 
 
     
 
-    var lonEl= data.coord.lon;
-
-    var otherQueryUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latEl + "&lon=" + lonEl + "&exclude={part}&appid=" + apiKey;
-
-    fetch(otherQueryUrl).then(function (responses) {
-        return responses.json()
-    }).then(function (datas) {
-        console.log(datas);
-
-    })
+    
 });
 
 
