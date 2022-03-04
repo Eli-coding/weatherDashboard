@@ -50,7 +50,7 @@ searchButton.addEventListener("click", function () {
         
         var dateConvert = moment.unix(data.dt).format("MM/DD/YYYY");
         var dateEl = document.getElementById("currentDate");
-        dateEl.textContent = "Date: "+dateConvert;
+        dateEl.textContent = dateConvert;
 
         var tempEl = document.getElementById("temp");
         tempEl.textContent = "Temperature: " + data.main.temp + "°F";
