@@ -1,5 +1,6 @@
 body{
     background-color: rgb(96, 210, 255);
+    color: #65a0e4;
 }
 
 
@@ -10,6 +11,16 @@ body{
     font-family: 'Lobster', cursive;
     color: rgb(255, 255, 255);
     
+}
+
+h1.forcast{
+
+    color:cornflowerblue; 
+}
+
+h1{
+
+    color:rgb(246, 246, 246);
 }
 
 h2 {
