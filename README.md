@@ -21,7 +21,7 @@ click on deploy link
 
 ## Usage
 
-You are welcome to use.
+Use the search to lookup the city of your choice. 
 
 ## Licenses
 
