@@ -18,8 +18,11 @@ function getIvuIndex(latEl, lonEl) {
     .then(function (datas) {
       console.log("this is uvindex data ", datas);
 
-      
-      var icon1Code = datas.daily[0].weather[0];
+      var uviEl = document.getElementById("uvIndex");
+      uviEl.textContent = "Uv Inex: " + datas.current.uvi + "%";
+
+
+      var icon1Code = datas.daily[0].weather[0].icon;
       var icon1El = document.getElementById("icon1");
       icon1El.src = "http://openweathermap.org/img/w/" + icon1Code + ".png";
 
@@ -35,6 +38,27 @@ function getIvuIndex(latEl, lonEl) {
 
       var humidity1El = document.getElementById("hum1");
       humidity1El.textContent = "Humidity: " + datas.daily[0].humidity + "%";
+
+
+
+      
+
+      var icon2Code = datas.daily[1].weather[0].icon;
+      var icon2El = document.getElementById("icon2");
+      icon2El.src = "http://openweathermap.org/img/w/" + icon2Code + ".png";
+
+      var dateConvert = moment.unix(datas.daily[1].dt).format("MM/DD/YYYY");
+      var date2El = document.getElementById("date2");
+      date2El.textContent = dateConvert;
+
+      var temp2El = document.getElementById("temp2");
+      temp2El.textContent = "Temp: " + datas.daily[1].temp.day + "°F";
+
+      var wind2El = document.getElementById("wind2");
+      wind2El.textContent = "Windspeed: " + datas.daily[1].wind_speed + " MPH";
+
+      var humidity2El = document.getElementById("hum2");
+      humidity2El.textContent = "Humidity: " + datas.daily[1].humidity + "%";
 });
 }
 
