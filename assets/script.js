@@ -16,17 +16,25 @@ function getIvuIndex(latEl, lonEl) {
       return responses.json();
     })
     .then(function (datas) {
-      console.log("this is uviindex data ", datas);
+      console.log("this is uvindex data ", datas);
 
       
+      var icon1Code = datas.daily[0].weather[0];
+      var icon1El = document.getElementById("icon1");
+      icon1El.src = "http://openweathermap.org/img/w/" + icon1Code + ".png";
+
+      var dateConvert = moment.unix(datas.daily[0].dt).format("MM/DD/YYYY");
+      var date1El = document.getElementById("date1");
+      date1El.textContent = dateConvert;
+
       var temp1El = document.getElementById("temp1");
-      temp1El.textContent = "Temperature: " + datas.daily[0].temp + "°F";
+      temp1El.textContent = "Temp: " + datas.daily[0].temp.day + "°F";
 
       var wind1El = document.getElementById("wind1");
       wind1El.textContent = "Windspeed: " + datas.daily[0].wind_speed + " MPH";
 
-      var humidity1El = document.getElementById("humidity1");
-      humidity1El.textContent = "Humidity: " + datas.dsily[0].humidity + "%";
+      var humidity1El = document.getElementById("hum1");
+      humidity1El.textContent = "Humidity: " + datas.daily[0].humidity + "%";
 });
 }
 
