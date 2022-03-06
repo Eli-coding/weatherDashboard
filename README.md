@@ -31,9 +31,6 @@ Use the search to lookup the city of your choice.
 
 Not nessesary at this time.
 
-## Test
-none.
-
 ## Questions
  
 Git Hub username:
