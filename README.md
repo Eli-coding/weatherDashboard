@@ -4,7 +4,7 @@
         
 ## Description
 A weather dashdoard that runs in browers. It uses a fetch call to get persistant data from the OpenWeather Api.
- https://github.com/Eli-coding/weatherDashboard
+ https://eli-coding.github.io/weatherDashboard/
 
 ## Table of Contents
 * [Description](#description)
