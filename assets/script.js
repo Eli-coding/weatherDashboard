@@ -1,4 +1,4 @@
-//git commit before anything
+
 
 var apiKey = "fd9d2a26a731af77c92b99159b6ac1e4";
 
@@ -58,7 +58,7 @@ function getIvuIndex(latEl, lonEl) {
       var humidity2El = document.getElementById("hum2");
       humidity2El.textContent = "Humidity: " + datas.daily[1].humidity + "%";
 
-      //3
+      //day3
 
       var icon3Code = datas.daily[2].weather[0].icon;
       var icon3El = document.getElementById("icon3");
@@ -95,7 +95,7 @@ function getIvuIndex(latEl, lonEl) {
       var humidity4El = document.getElementById("hum4");
       humidity4El.textContent = "Humidity: " + datas.daily[3].humidity + "%";
 
-      //day 5 
+      //day 5
       var icon5Code = datas.daily[4].weather[0].icon;
       var icon5El = document.getElementById("icon5");
       icon5El.src = "http://openweathermap.org/img/w/" + icon5Code + ".png";
@@ -163,7 +163,14 @@ searchButton.addEventListener("click", function () {
 
       getIvuIndex(data.coord.lat, data.coord.lon);
     });
+
+  //local storage
+//   localStorage.setItem("city");
+//   const cityHistory = localStorage.getItem('city');
+// document.createElemenet;
+
 });
 
 
-//local storage
+
+//uv index change color
