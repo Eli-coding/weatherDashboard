@@ -1,6 +1,6 @@
 body{
-    background-color: rgb(96, 210, 255);
-    color: #65a0e4;
+    background-color: rgb(79, 127, 230);
+    color: #4f7fe6;
 }
 
 
@@ -13,16 +13,12 @@ body{
     
 }
 
-h1.forcast{
+h1.forcast, h2.history{
 
-    color:cornflowerblue; 
+    color:rgb(248, 251, 255); 
 }
 
 
-
-h2 {
-    color:cornflowerblue;
-}
 
 h3{
     color: whitesmoke;

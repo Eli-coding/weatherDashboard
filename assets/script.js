@@ -22,14 +22,14 @@ function getIvuIndex(latEl, lonEl) {
       uviEl.textContent = "Uv Index: " + datas.current.uvi + "%";
 
       //check uv index if it good, bad , moderate with color
-      if (datas[0].value < 4) {
-        uviEl.setAttribute("class", "badge badge-success");
+      if (datas.current.uvi< 4) {
+        uviEl.setAttribute("class", "badge-success");
       } 
-      else if (datas[0].value < 8) {
+      else if (datas.current.uvi < 8) {
         uviEl.setAttribute("class", "badge-warning");
       }
       else {
-        uviEl.setAttribute("class", "badge badge-danger");
+        uviEl.setAttribute("class", "badge-danger");
       }
 
       //day 1 weather forcast
