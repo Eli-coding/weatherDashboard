@@ -121,6 +121,8 @@ function getIvuIndex(latEl, lonEl) {
       var humidity5El = document.getElementById("hum5");
       humidity5El.textContent = "Humidity: " + datas.daily[4].humidity + "%";
     });
+
+    
 }
 
 function getWeather(city) {
@@ -169,17 +171,19 @@ function getWeather(city) {
     });
 }
 
+//event listener for searching a city
 var searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", function () {
   var city = document.getElementById("cityName").value;
   getWeather(city);
-  console.log(city);
+
 });
 
-function shistory(city) {
+
+function searchHistory(city) {
   getWeather(city);
-  localStorage.setItem(city);
-  localStorage.getItem(city);
+  localStorage.setItem('city searched', city);
+  localStorage.getItem('city searched', city);
   const cityBtn = document.createElemenet("button");
   cityBtn.innerHTML = city;
   document.body.appendChild(cityBtn);
@@ -187,14 +191,17 @@ function shistory(city) {
 
 //get the city
 // create a button with the name of the city
-//set to local stroage the city
+//set to local strorage the city
 //when click city call a fetch again
 
+
+//not my code ignore this just reference
+
 // Get history from local storage if any
-searchEl.addEventListener("click", function () {
-  const searchTerm = cityEl.value;
-  getWeather(searchTerm); //
-  searchHistory.push(searchTerm);
-  localStorage.setItem("search", JSON.stringify(searchHistory));
-  renderSearchHistory();
-});
+// searchEl.addEventListener("click", function () {
+//   const searchTerm = cityEl.value;
+//   getWeather(searchTerm); //
+//   searchHistory.push(searchTerm);
+//   localStorage.setItem("search", JSON.stringify(searchHistory));
+//   renderSearchHistory();
+// });
