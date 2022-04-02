@@ -13,7 +13,6 @@ function getIvuIndex(latEl, lonEl) {
   fetch(otherQueryUrl)
     .then(function (responses) {
       return responses.json();
-      
     })
     .then(function (datas) {
       console.log("this is uvindex data ", datas);
@@ -22,13 +21,11 @@ function getIvuIndex(latEl, lonEl) {
       uviEl.textContent = "Uv Index: " + datas.current.uvi + "%";
 
       //check uv index if it good, bad , moderate with color
-      if (datas.current.uvi< 4) {
+      if (datas.current.uvi < 4) {
         uviEl.setAttribute("class", "badge-success");
-      } 
-      else if (datas.current.uvi < 8) {
+      } else if (datas.current.uvi < 8) {
         uviEl.setAttribute("class", "badge-warning");
-      }
-      else {
+      } else {
         uviEl.setAttribute("class", "badge-danger");
       }
 
@@ -126,11 +123,7 @@ function getIvuIndex(latEl, lonEl) {
     });
 }
 
-var searchButton = document.getElementById("searchButton");
-searchButton.addEventListener("click", function () {
-  var city = document.getElementById("cityName").value;
-  console.log(city);
-
+function getWeather(city) {
   var queryUrl =
     "http://api.openweathermap.org/data/2.5/weather?q=" +
     city +
@@ -174,11 +167,34 @@ searchButton.addEventListener("click", function () {
 
       getIvuIndex(data.coord.lat, data.coord.lon);
     });
+}
 
-  //local storage
-  //   localStorage.setItem("city");
-  //   const cityHistory = localStorage.getItem('city');
-  // document.createElemenet;
+var searchButton = document.getElementById("searchButton");
+searchButton.addEventListener("click", function () {
+  var city = document.getElementById("cityName").value;
+  getWeather(city);
+  console.log(city);
 });
 
-//uv index change color
+function shistory(city) {
+  getWeather(city);
+  localStorage.setItem(city);
+  localStorage.getItem(city);
+  const cityBtn = document.createElemenet("button");
+  cityBtn.innerHTML = city;
+  document.body.appendChild(cityBtn);
+}
+
+//get the city
+// create a button with the name of the city
+//set to local stroage the city
+//when click city call a fetch again
+
+// Get history from local storage if any
+searchEl.addEventListener("click", function () {
+  const searchTerm = cityEl.value;
+  getWeather(searchTerm); //
+  searchHistory.push(searchTerm);
+  localStorage.setItem("search", JSON.stringify(searchHistory));
+  renderSearchHistory();
+});
