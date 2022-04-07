@@ -1,4 +1,15 @@
 var apiKey = "fd9d2a26a731af77c92b99159b6ac1e4";
+let keyCount = 0;
+
+// Forloop for persisting the data onto HMTL page
+// for (var i = 0; i < localStorage.length; i++) {
+ 
+//   // Creates city list with local storage
+//   var city = localStorage.getItem(i);
+//   var cityName = (".list-group").addClass("list-group-item");
+ 
+//   cityName.append("<li>" + city + "</li>");
+//  }
 
 function getIvuIndex(latEl, lonEl) {
   var otherQueryUrl =
@@ -8,6 +19,13 @@ function getIvuIndex(latEl, lonEl) {
     lonEl +
     "&exclude=minutely,hourly,alerts&units=imperial&appid=" +
     apiKey;
+
+    // // referencing the same cityName variable from the above for loop
+    // let cityName = $(".list-group").addClass("list-group-item");
+    // cityName.append("<li>" + response.name + "</li>");
+    // // Local storage
+    // let local = localStorage.setItem(keyCount, response.name);
+    // keyCount = keyCount + 1;
 
   // gets uv index from api
   fetch(otherQueryUrl)
@@ -172,22 +190,22 @@ function getWeather(city) {
 }
 
 //event listener for searching a city
-var searchButton = document.getElementById("searchButton");
-searchButton.addEventListener("click", function () {
+ var searchButton = document.getElementById("searchButton");
+ searchButton.addEventListener("click", function () {
   var city = document.getElementById("cityName").value;
-  getWeather(city);
+   getWeather(city);
 
 });
 
 
-function searchHistory(city) {
-  getWeather(city);
-  localStorage.setItem('city searched', city);
-  localStorage.getItem('city searched', city);
-  const cityBtn = document.createElemenet("button");
-  cityBtn.innerHTML = city;
-  document.body.appendChild(cityBtn);
-}
+// function searchHistory(city) {
+//   getWeather(city);
+//   localStorage.setItem('city searched', city);
+//   localStorage.getItem('city searched', city);
+//   const cityBtn = document.createElemenet("button");
+//   cityBtn.innerHTML = city;
+//   document.body.appendChild(cityBtn);
+// }
 
 //get the city
 // create a button with the name of the city
